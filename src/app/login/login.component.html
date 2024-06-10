@@ -1,3 +1,4 @@
+<p-toast />
 <form [formGroup]="loginForm" class="form">
   <p-floatLabel>
     <input pInputText id="username" formControlName="username" />
@@ -16,6 +17,6 @@
     [loading]="loading"
     icon="pi pi-sign-in"
     [disabled]="loginForm.invalid"
-    (onClick)="submit()"
+    (onClick)="onSubmit()"
   />
 </form>
