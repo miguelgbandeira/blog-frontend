@@ -1,0 +1,11 @@
+<p-card
+  header="{{ post.title }}"
+  [style]="{ width: '25rem', 'margin-bottom': '2em' }"
+>
+  <p>
+    {{ post.body }}
+  </p>
+  <ng-template pTemplate="footer">
+    {{ post.authorName }} on {{ post.publishedOn | date }}
+  </ng-template>
+</p-card>
