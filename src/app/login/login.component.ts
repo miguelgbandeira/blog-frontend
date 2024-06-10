@@ -50,12 +50,12 @@ export class LoginComponent {
       )
       .subscribe(
         () => {
-          this.router.navigate(['/']);
           this.messageService.add({
             severity: 'success',
             summary: 'Success',
             detail: 'Login successfully',
           });
+          this.router.navigate(['/']);
         },
         () => {
           this.messageService.add({
