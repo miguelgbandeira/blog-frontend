@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" class="form">
+  <p-floatLabel>
+    <input pInputText id="username" formControlName="username" />
+    <label for="username">Username</label>
+  </p-floatLabel>
+  <p-floatLabel>
+    <p-password
+      formControlName="password"
+      [feedback]="false"
+      [toggleMask]="true"
+    />
+    <label for="password">Password</label>
+  </p-floatLabel>
+  <p-button
+    label="Login"
+    [loading]="loading"
+    icon="pi pi-sign-in"
+    [disabled]="loginForm.invalid"
+    (onClick)="submit()"
+  />
+</form>
