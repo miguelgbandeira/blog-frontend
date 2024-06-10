@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../models/post.model';
-import { catchError, of, shareReplay } from 'rxjs';
+import { Observable, catchError, of, shareReplay } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
@@ -19,4 +19,13 @@ export class PostsService {
   );
 
   posts = toSignal(this.posts$, { initialValue: [] as Post[] });
+
+  getPostById(id: string): Observable<Post> {
+    return this.http.get<Post>(`http://localhost:3000/posts/${id}`).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of();
+      })
+    );
+  }
 }

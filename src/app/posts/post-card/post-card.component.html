@@ -1,6 +1,7 @@
 <p-card
   header="{{ post.title }}"
-  [style]="{ width: '25rem', 'margin-bottom': '2em' }"
+  [style]="{ width: '25rem', 'margin-bottom': '2em', cursor: 'pointer' }"
+  (click)="onClick()"
 >
   <p>
     {{ post.body }}
