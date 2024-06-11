@@ -3,6 +3,9 @@
   [style]="{ width: '25rem', 'margin-bottom': '2em', cursor: 'pointer' }"
   (click)="onClick()"
 >
+  <ng-template pTemplate="header">
+    <img alt="Card" src="{{ post.image }}" />
+  </ng-template>
   <div>
     <p>
       {{ post.body | truncate : 500 }}
