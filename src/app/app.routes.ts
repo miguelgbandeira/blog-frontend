@@ -6,6 +6,7 @@ import { PostPageComponent } from './posts/post-page/post-page.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NewPostComponent } from './posts/new-post/new-post.component';
 import { AuthGuard } from './authguard.service';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,11 @@ export const routes: Routes = [
   {
     path: 'post/:id',
     component: PostPageComponent,
+  },
+  {
+    path: 'post/:id/edit',
+    component: EditPostComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',

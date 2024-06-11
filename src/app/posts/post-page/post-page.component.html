@@ -1,3 +1,11 @@
+@if (isAuthenticated()) {
+<p-button
+  label="Edit post"
+  icon="pi pi-pen-to-square"
+  (onClick)="navigateToEditPost()"
+  style="margin-left: 5em"
+/>
+}
 <div class="post">
   <h1>{{ post?.title }}</h1>
   @if (post.image) {

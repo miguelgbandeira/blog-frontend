@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.form {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 3em;
+}
+
+.image {
+  margin-bottom: 3em;
+}
+
+input {
+  width: 100%;
+}
