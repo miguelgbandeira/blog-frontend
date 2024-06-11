@@ -38,4 +38,14 @@ export class PostsService {
       })
     );
   }
+
+  editPost(postData: any, id: string): Observable<any> {
+    // Assuming postData is an object containing the fields title, image, and body
+    return this.http.put(`http://localhost:3000/posts/${id}`, postData).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of(null); // Returning null or any other appropriate value in case of error
+      })
+    );
+  }
 }

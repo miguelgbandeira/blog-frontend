@@ -28,7 +28,7 @@ import { Router } from '@angular/router';
 export class NewPostComponent {
   postGroup = new FormGroup({
     title: new FormControl('', Validators.required),
-    image: new FormControl(''),
+    image: new FormControl('', Validators.required),
     body: new FormControl('', Validators.required),
   });
 

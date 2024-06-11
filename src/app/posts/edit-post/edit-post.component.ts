@@ -67,7 +67,7 @@ export class EditPostComponent implements OnInit, OnDestroy {
   initializeForm(): void {
     this.postGroup = new FormGroup({
       title: new FormControl(this.post.title, Validators.required),
-      image: new FormControl(this.post.image),
+      image: new FormControl(this.post.image, Validators.required),
       body: new FormControl(this.post.body, Validators.required),
     });
   }
@@ -75,5 +75,20 @@ export class EditPostComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
-  submitPost() {}
+  submitPost() {
+    const postData = {
+      title: this.postGroup.value.title,
+      image: this.postGroup.value.image,
+      body: this.postGroup.value.body,
+    };
+    this.postsService.editPost(postData, this.id).subscribe(
+      (response) => {
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        // Handle error
+        console.error('Error submitting post:', error);
+      }
+    );
+  }
 }
