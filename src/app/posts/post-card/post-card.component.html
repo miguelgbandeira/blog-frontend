@@ -7,9 +7,7 @@
     <img alt="Card" src="{{ post.image }}" />
   </ng-template>
   <div>
-    <p>
-      {{ post.body | truncate : 500 }}
-    </p>
+    <div [innerHTML]="post.body | truncate : 200"></div>
   </div>
   <ng-template pTemplate="footer">
     <div class="chips">

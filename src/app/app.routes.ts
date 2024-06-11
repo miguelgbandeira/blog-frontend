@@ -33,7 +33,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: HomepageComponent,
+    redirectTo: 'posts',
     pathMatch: 'full',
   },
 ];

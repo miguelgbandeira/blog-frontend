@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { ImageModule } from 'primeng/image';
 import { LoginService } from '../../login/login.service';
 import { ButtonModule } from 'primeng/button';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-page',
@@ -20,12 +21,14 @@ export class PostPageComponent implements OnInit {
   subscriptions: Subscription[] = [];
   id: string;
   post: Post;
+  sanitizedHtml: SafeHtml;
 
   constructor(
     private postsService: PostsService,
     private authService: LoginService,
     private activeRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +38,9 @@ export class PostPageComponent implements OnInit {
         this.subscriptions.push(
           this.postsService.getPostById(this.id).subscribe((post) => {
             this.post = post;
+            this.sanitizedHtml = this.sanitizer.bypassSecurityTrustHtml(
+              this.post.body
+            );
           })
         );
       })

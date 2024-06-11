@@ -30,7 +30,5 @@
     />
     <p-chip label="{{ post.publishedOn | date }}" />
   </div>
-  <div class="body">
-    <p>{{ post.body }}</p>
-  </div>
+  <div class="body" [innerHTML]="post.body"></div>
 </div>
