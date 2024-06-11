@@ -28,4 +28,14 @@ export class PostsService {
       })
     );
   }
+
+  submitPost(postData: any): Observable<any> {
+    // Assuming postData is an object containing the fields title, image, and body
+    return this.http.post('http://localhost:3000/posts/', postData).pipe(
+      catchError((err) => {
+        console.log(err);
+        return of(null); // Returning null or any other appropriate value in case of error
+      })
+    );
+  }
 }
