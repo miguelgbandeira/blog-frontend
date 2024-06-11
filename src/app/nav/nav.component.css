@@ -1,0 +1,7 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+p-button {
+  margin-right: 1em;
+}
