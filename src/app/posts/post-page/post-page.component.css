@@ -5,6 +5,7 @@
 
 h1 {
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .image-container {
@@ -12,13 +13,14 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   border-radius: 20px;
 }
 
 .chips {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2em;
 }
 
 .body {

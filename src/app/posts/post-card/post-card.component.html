@@ -3,10 +3,19 @@
   [style]="{ width: '25rem', 'margin-bottom': '2em', cursor: 'pointer' }"
   (click)="onClick()"
 >
-  <p>
-    {{ post.body }}
-  </p>
+  <div>
+    <p>
+      {{ post.body | truncate : 500 }}
+    </p>
+  </div>
   <ng-template pTemplate="footer">
-    {{ post.authorName }} on {{ post.publishedOn | date }}
+    <div class="chips">
+      <p-chip
+        label="{{ post.authorName }}"
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+        alt="Avatar image"
+      />
+      <p-chip label="{{ post.publishedOn | date }}" />
+    </div>
   </ng-template>
 </p-card>

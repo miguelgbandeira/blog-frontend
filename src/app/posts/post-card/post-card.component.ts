@@ -4,11 +4,13 @@ import { Post } from '../../models/post.model';
 import { CommonModule } from '@angular/common';
 import { PostsService } from '../posts.service';
 import { Router } from '@angular/router';
+import { TruncatePipe } from '../../truncate.pipe';
+import { ChipModule } from 'primeng/chip';
 
 @Component({
   selector: 'app-post-card',
   standalone: true,
-  imports: [CardModule, CommonModule],
+  imports: [CardModule, CommonModule, TruncatePipe, ChipModule],
   templateUrl: './post-card.component.html',
   styleUrl: './post-card.component.css',
 })
