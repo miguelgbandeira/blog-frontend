@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { LoginService } from '../login/login.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [ButtonModule, RouterModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })

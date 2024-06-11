@@ -5,3 +5,7 @@
 p-button {
   margin-right: 1em;
 }
+
+.logo {
+  cursor: pointer;
+}
