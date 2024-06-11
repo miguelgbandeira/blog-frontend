@@ -17,6 +17,10 @@ export class NavComponent {
     this.router.navigate(['/login']);
   }
 
+  navigateToNewPost() {
+    this.router.navigate(['/posts/new']);
+  }
+
   logOut() {
     this.loginService.logout();
   }
