@@ -3,11 +3,14 @@ import { PostsService } from '../posts.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../../models/post.model';
+import { ChipModule } from 'primeng/chip';
+import { CommonModule } from '@angular/common';
+import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-post-page',
   standalone: true,
-  imports: [],
+  imports: [ChipModule, CommonModule, ImageModule],
   templateUrl: './post-page.component.html',
   styleUrl: './post-page.component.css',
 })

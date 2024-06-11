@@ -1,0 +1,26 @@
+.post {
+  width: 40%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.image-container {
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.5em;
+  border-radius: 20px;
+}
+
+.chips {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body {
+  line-height: 1.5;
+}

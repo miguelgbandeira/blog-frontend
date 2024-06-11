@@ -1,1 +1,28 @@
-<p>{{ post?.title }}</p>
+<div class="post">
+  <h1>{{ post?.title }}</h1>
+  @if (post.image) {
+  <div
+    class="image-container"
+    [style.background-image]="'url(' + post.image + ')'"
+  ></div>
+
+  } @else {
+  <div
+    class="image-container"
+    [style.background-image]="
+      'url(https://www.skillcast.com/hubfs/business_writing_on_paper_1200x627.png)'
+    "
+  ></div>
+  }
+  <div class="chips">
+    <p-chip
+      label="{{ post.authorName }}"
+      image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+      alt="Avatar image"
+    />
+    <p-chip label="{{ post.publishedOn | date }}" />
+  </div>
+  <div class="body">
+    <p>{{ post.body }}</p>
+  </div>
+</div>
